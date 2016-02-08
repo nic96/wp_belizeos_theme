@@ -1,4 +1,4 @@
-# wp_nomad_theme
+# Wordpress Nomad Theme
 Another Wordpress theme
 
 I couldn't find any theme that suited me right so I created my own.
