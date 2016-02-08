@@ -16,7 +16,7 @@ Note: This theme is still WIP so there are still a few bugs and things to fix.
 * Sticky Footer
 * Responsive height footer (The footer changes height depending on the content)
 * Light. This theme loads fast (Unless you set a huge background image)
-* Option Two column layout
+* Optional two column layout
 * Right sidebar widgets
 * Footer widgets
 * Uses fontawesome icons https://fortawesome.github.io/Font-Awesome/
