@@ -15,6 +15,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 TODO
 Make the main navbar collapsable and the navbar submenus should not be hidden with display:none;
+Remove unnecessary css.
 */
 
 html {
@@ -200,6 +201,10 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
 }
 article footer {
     display: inline-block;
+}
+.tags {
+    float: left;
+    width: 100%;
 }
 .tags a {
     text-decoration: none;
