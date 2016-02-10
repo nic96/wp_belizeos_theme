@@ -394,3 +394,6 @@ input:focus, textarea:focus{
 .nocomments {
     display:inline-block;
 }
+#commentform #comment {
+    max-width: 100%;
+}
