@@ -39,7 +39,6 @@ body {
 a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
     font-family : Verdana, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, Geneva, Arial, Sans-serif;
 }
-
 #header {
     overflow: auto;
     display: block;
@@ -195,16 +194,12 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
     background-color:#fbfbfb;
     padding: 10px 20px;
     margin-bottom: 20px;
-    overflow: visible;
+    overflow: auto;
 }
 .post_content {
-
 }
 article footer {
     display: inline-block;
-}
-.tags {
-    float: left;
     width: 100%;
 }
 .tags a {
