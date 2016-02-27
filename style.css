@@ -40,7 +40,7 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
     font-family : Verdana, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, Geneva, Arial, Sans-serif;
 }
 #header {
-    overflow: visible;
+    overflow: auto;
     display: block;
 }
 .navbar {
