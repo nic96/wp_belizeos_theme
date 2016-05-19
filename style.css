@@ -263,14 +263,10 @@ ul, ol {
     vertical-align: top;
     float: none;
 }
-<<<<<<< HEAD
-button, .btn-default, .pager li > a, .pager li > span, .search-submit {
-=======
 .footerad-wrapper .adsbygoogle { display: inline-block !important; width: 320px; height: 100px; }
 @media(min-width: 500px) { .footerad-wrapper .adsbygoogle { width: 468px; height: 60px; } }
 @media(min-width: 800px) { .footerad-wrapper .adsbygoogle { width: 728px; height: 90px; } }
-button, .btn-default, .pager li > a, .pager li > span {
->>>>>>> d46da175ff5851da9176058884d4c35cd355ce0c
+button, .btn-default, .pager li > a, .pager li > span, .search-submit {
     -moz-box-shadow: 0px 1px 0px 0px #adadad;
     -webkit-box-shadow: 0px 1px 0px 0px #adadad;
     box-shadow: 0px 1px 0px 0px #adadad;
