@@ -59,7 +59,7 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
 .navbar-brand, .navbar li a {
     display: inline-block;
     color: white;
-    padding: 0px 6px;
+    padding: 0px 12px;
     text-decoration: none;
 }
 .navbar .menu-item-has-children > a:after {
