@@ -180,15 +180,22 @@ function nomad_display_post($multiple_on_page) { ?>
             <?php if ($multiple_on_page) : ?>
             <div class="article-header">
                 <h2 class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-                <small>Posted on <?php echo get_the_date(); ?> by <i class="fa fa-user"></i> <?php the_author_posts_link(); ?>
-                <?php if(get_the_category_list()) { if(count(get_the_category_list()) > 1) { ?>| Categories <i class="fa fa-sitemap"></i> <?php }else{ ?>| Category <i class="fa fa-sitemap"></i> <?php } echo get_the_category_list( ", " ); ?><?php } ?></small>
+                <small><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?> | <i class="fa fa-user"></i> <?php the_author_posts_link(); ?>
+                <?php if(get_the_category_list()) { if(count(get_the_category_list()) > 1) { ?>| Categories <i class="fa fa-sitemap"></i>
+                <?php }else{ ?>| Category <i class="fa fa-sitemap"></i> <?php } echo get_the_category_list( ", " ); ?><?php }
+                echo ' | <i class="fa fa-comment"></i> ';
+                comments_popup_link( 'No comments', '1 comment', '% comments' );
+            ?></small>
             </div>
             <?php else: ?>
             <div class="article-header">
                 <h1 class="title"><?php the_title(); ?></h1>
-                <?php if(!is_page()){ ?><small>Posted on <?php echo get_the_date(); ?> by <i class="fa fa-user"></i> <?php the_author_posts_link(); ?>
+                <?php if(!is_page()){ ?><small><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?> | <i class="fa fa-user"></i> <?php the_author_posts_link(); ?>
                 <?php if(get_the_category_list()) { if(count(get_the_category_list()) > 1) { ?>| Categories <i class="fa fa-sitemap"></i> <?php }else{ ?>| Category <i class="fa fa-sitemap"></i> <?php } echo get_the_category_list( ", " ); ?><?php } ?></small>
-                <?php } ?>
+                <?php
+                    echo ' | <i class="fa fa-comment"></i> ';
+                    comments_popup_link( 'No comments', '1 comment', '% comments' );
+                }?>
             </div>
             <?php endif ?>
         
