@@ -3,7 +3,8 @@
     <div id="main" class="<?php nomad_main_classes(); ?>" role="main">
             
             <div class="block">
-            <h1 class="title" style="font-size: 18pt;">Category: <?php single_cat_title(); ?></h1>
+            <h1 class="title" style="font-size: 18pt;"><?php single_cat_title(); ?></h1>
+            <?php echo category_description( $category_id ); ?>
             </div>
 
             <?php if (have_posts()) : ?>
