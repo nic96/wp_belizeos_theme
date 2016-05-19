@@ -19,7 +19,7 @@ function navToggle() {
     <div id="header">
         <div class="navbar">
             <a class="navbar-brand" title="<?php bloginfo('description'); ?>" href="<?php echo esc_url(home_url('/')); ?>"><?php the_navbar_brand( $blog_id = 0 ); ?></a>
-            <a class="nav_toggle" href="javascript:void(0);" onclick="navToggle()">&#9776;</a>
+            <a class="nav_toggle" href="javascript:void(0);" onclick="navToggle()"><i class="fa fa-bars" aria-hidden="true"></i></a>
             <?php wp_nav_menu( array( 'theme_location' => 'main_nav',
             'menu' => 'main_nav', /* menu name */
             'menu_class' => 'main-nav',
