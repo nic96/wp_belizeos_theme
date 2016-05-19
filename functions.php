@@ -283,7 +283,7 @@ add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 // Replaces the excerpt "more" text by a link
 function new_excerpt_more($more) {
     global $post;
-    return '<a class="moretag" href="'. get_permalink($post->ID) . '"> more...</a>';
+    return '... <a class="moretag" href="'. get_permalink($post->ID) . '"> Read the full article &rarr;</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
