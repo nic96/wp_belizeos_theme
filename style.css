@@ -51,6 +51,7 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
     vertical-align: center;
     margin-right: auto;
     margin-left: auto;
+    overflow:hidden;
 }
 .main-nav, .navbar-brand, .navbar li {
     float: left;
@@ -58,7 +59,7 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
 .navbar-brand, .navbar li a {
     display: inline-block;
     color: white;
-    padding: 0px 16px;
+    padding: 0px 6px;
     text-decoration: none;
 }
 .navbar .menu-item-has-children > a:after {
@@ -82,7 +83,7 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
     position: absolute;
     top:auto;
 }
-.navbar ul ul li a:hover, .navbar ul ul li a:focus {
+.navbar ul ul li a:hover, .navbar ul ul li a:focus, .navbar ul ul li:hover {
     background-color: #111;
 }
 /* End dropdown */
@@ -177,7 +178,7 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
 .title a:hover {
     color:#1e73be;
 }
-.post, .block, button, .btn-default, .pager li > a, .pager li > span, .btn-dark, #sidebar-wrapper, h3#comments, .commentlist, #respond {
+.post, .block, button, .btn-default, .pager li > a, .pager li > span, .btn-dark, #sidebar-wrapper, h3#comments, .commentlist, #respond, .search-submit {
     -moz-border-radius:6px;
     -webkit-border-radius:6px;
     border-radius:6px;
@@ -241,13 +242,16 @@ ul, ol {
     height: 120px;
 }
 .footer .widget {
-    float: left;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
 }
 .footer-wrapper {
     display: block;
     width:90%;
     margin: 18px auto;
     max-width: 1170px;
+    width: 100%;
 }
 .footerad-wrapper {
     width: 100%;
@@ -259,7 +263,7 @@ ul, ol {
     vertical-align: top;
     float: none;
 }
-button, .btn-default, .pager li > a, .pager li > span {
+button, .btn-default, .pager li > a, .pager li > span, .search-submit {
     -moz-box-shadow: 0px 1px 0px 0px #adadad;
     -webkit-box-shadow: 0px 1px 0px 0px #adadad;
     box-shadow: 0px 1px 0px 0px #adadad;
@@ -275,13 +279,13 @@ button, .btn-default, .pager li > a, .pager li > span {
     display:inline-block;
     cursor:pointer;
     color:#000;
-    font-size:15px;
     font-weight:bold;
-    padding:6px 6px;
+    padding:5px 6px;
+    margin: 3px 0px;
     text-decoration:none;
     text-shadow:0px 2px 0px #d8d8d8;
 }
-button:hover, .btn-default:hover, .pager li > a:hover, .pager li > span:hover:hover {
+button:hover, .btn-default:hover, .pager li > a:hover, .pager li > span:hover:hover, .search-submit:hover {
     -moz-box-shadow: 0px 1px 0px 0px #8d8d8d;
     -webkit-box-shadow: 0px 1px 0px 0px #8d8d8d;
     box-shadow: 0px 1px 0px 0px #8d8d8d;
@@ -295,12 +299,13 @@ button:hover, .btn-default:hover, .pager li > a:hover, .pager li > span:hover:ho
     border:1px solid #b8b8b8;
     text-shadow:0px 2px 0px #b8b8b8;
 }
-button:active, .btn-default:active, .pager li > a:active, .pager li > span:active:active {
+button:active, .btn-default:active, .pager li > a:active, .pager li > span:active:active, .search-submit:active {
     position:relative;
     top:1px;
 }
 input, textarea {
     padding: 6px 6px;
+    margin: 3px 0px;
     color: #555;
     background-color: #fff;
     border: 1px solid #ccc;

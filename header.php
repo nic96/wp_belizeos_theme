@@ -13,7 +13,7 @@
     <div class="site">
     <div id="header">
         <div class="navbar">
-            <a class="navbar-brand" title="<?php bloginfo('description'); ?>" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+            <a class="navbar-brand" title="<?php bloginfo('description'); ?>" href="<?php echo esc_url(home_url('/')); ?>"><?php the_navbar_brand( $blog_id = 0 ); ?></a>
             <?php wp_nav_menu( array( 'theme_location' => 'main_nav',
             'menu' => 'main_nav', /* menu name */
             'menu_class' => 'main-nav',

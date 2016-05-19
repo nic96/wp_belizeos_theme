@@ -8,6 +8,11 @@ function nomad_theme_support() {
         'gallery',
         'caption'
     ));
+    add_theme_support( 'custom-logo', array(
+        'height'      => 46,
+        'width'       => 400,
+        'flex-width' => true,
+    ) );
     add_theme_support('post-thumbnails');      // wp thumbnails (sizes handled in functions.php)
     set_post_thumbnail_size(125, 125, true);   // default thumb size
     add_theme_support('automatic-feed-links'); // rss thingy
@@ -210,7 +215,54 @@ function nomad_display_post($multiple_on_page) { ?>
     
     </article>
 
-<?php } 
+<?php }
+
+function get_navbar_brand( $blog_id = 0 ){
+    $html = '';
+    if ( function_exists( 'the_custom_logo' ) ) {
+        if(has_custom_logo( $blog_id = 0 )) {
+            if ( is_multisite() && (int) $blog_id !== get_current_blog_id() ) {
+                switch_to_blog( $blog_id );
+            }
+        
+            $custom_logo_id = get_theme_mod( 'custom_logo' );
+        
+            // We have a logo. Logo is go.
+            if ( $custom_logo_id ) {
+                $html = wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+                    'class'    => 'custom-logo',
+                    'itemprop' => 'logo',
+                ));
+            }
+        
+            // If no logo is set but we're in the Customizer, leave a placeholder (needed for the live preview).
+            elseif ( is_customize_preview() ) {
+                $html = '<img class="custom-logo"/>';
+            }
+        
+            if ( is_multisite() && ms_is_switched() ) {
+                restore_current_blog();
+            }
+        
+            /**
+            * Filter the custom logo output.
+            *
+            * @since 4.5.0
+            *
+            * @param string $html Custom logo HTML output.
+            */
+        }else{
+            $html = bloginfo('name');
+        }
+    }else{
+        $html = bloginfo('name');
+    }
+    return apply_filters( 'get_navbar_brand', $html );
+}
+
+function the_navbar_brand( $blog_id = 0){
+    echo get_navbar_brand( $blog_id );
+}
 
 function special_nav_class($classes, $item){
      if( in_array('current-menu-item', $classes) ){
