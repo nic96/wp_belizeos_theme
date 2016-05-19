@@ -162,8 +162,8 @@ function nomad_page_navi() {
     <?php if (get_next_posts_link() or get_previous_posts_link()) { ?>
         <nav class="block">
             <ul class="pager pager-unspaced">
-                <li class="previous"><?php next_posts_link("<i class='fa fa-arrow-left'></i> " . __('Older posts', "nomad")); ?></li>
-                <li class="next"><?php previous_posts_link(__('Newer posts', "nomad") . " <i class='fa fa-arrow-right'></i>"); ?></li>
+                <li class="previous"><?php next_posts_link(__('Older posts', "nomad") . " <i class='fa fa-arrow-right'></i>"); ?></li>
+                <li class="next"><?php previous_posts_link("<i class='fa fa-arrow-left'></i> " . __('Newer posts', "nomad")); ?></li>
             </ul>
         </nav>
     <?php } ?>
@@ -279,6 +279,13 @@ function special_nav_class($classes, $item){
      return $classes;
 }
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+// Replaces the excerpt "more" text by a link
+function new_excerpt_more($more) {
+    global $post;
+    return '<a class="moretag" href="'. get_permalink($post->ID) . '"> more...</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 function nomad_main_classes() {
     if ( !is_active_sidebar( 'sidebar' ) ){

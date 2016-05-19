@@ -15,8 +15,8 @@
             <?php if (get_next_post() || get_previous_post()) { ?>
             <nav class="block">
                     <ul class="pager pager-unspaced">
-                            <li class="previous"><?php previous_post_link('%link', "<i class='fa fa-arrow-left'></i> " . __( 'Previous Post', "nomad")); ?></li>
-                            <li class="next"><?php next_post_link('%link', __( 'Next Post', "nomad") . " <i class='fa fa-arrow-right'></i>"); ?></li>
+                            <li class="previous"><?php previous_post_link('%link', __( 'Previous Post', "nomad") . " <i class='fa fa-arrow-right'></i>"); ?></li>
+                            <li class="next"><?php next_post_link('%link', "<i class='fa fa-arrow-left'></i> " . __( 'Next Post', "nomad")); ?></li>
                     </ul>
             </nav>
             <?php } ?>

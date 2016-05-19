@@ -229,8 +229,14 @@ article footer {
     padding-left: 0;
     list-style: none;
 }
-.widget a {
+.widget a, a {
     text-decoration: none;
+}
+a {
+    color: #00067d;
+}
+a:hover {
+    color: #1e73be;
 }
 ul, ol {
     margin-top: 0;
@@ -398,17 +404,16 @@ input:focus, textarea:focus{
   list-style: none;
   text-align: center;
   display:inline-block;
+  width:100%;
 }
 .pager li {
   display: inline;
 }
-.pager .next > a,
-.pager .next > span {
-  float: right;
-}
-.pager .previous > a,
-.pager .previous > span {
+.pager .next {
   float: left;
+}
+.pager .previous {
+  float: right;
 }
 .commentlist {
     padding-left: 40px;

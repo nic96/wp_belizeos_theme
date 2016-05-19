@@ -6,20 +6,11 @@
 
             <?php while (have_posts()) : the_post(); ?>
             
-            <?php nomad_display_post(false); ?>
-            
-            <?php comments_template('',true); ?>
+            <?php nomad_display_post(true); ?>
             
             <?php endwhile; ?>
             
-            <?php if (get_next_post() || get_previous_post()) { ?>
-            <nav class="block">
-                    <ul class="pager pager-unspaced">
-                            <li class="previous"><?php previous_post_link('%link', "<i class='fa fa-arrow-left'></i> " . __( 'Previous Post', "nomad")); ?></li>
-                            <li class="next"><?php next_post_link('%link', __( 'Next Post', "nomad") . " <i class='fa fa-arrow-right'></i>"); ?></li>
-                    </ul>
-            </nav>
-            <?php } ?>
+            <?php nomad_page_navi(); ?>
             
             <?php else : ?>
             
