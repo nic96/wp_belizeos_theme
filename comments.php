@@ -46,7 +46,6 @@
 
         <?php else : // comments are closed ?>
                 <!-- If comments are closed. -->
-                <small class="nocomments block"><?php _e('Comments are closed.'); ?></small>
 
         <?php endif; ?>
 <?php endif; ?>

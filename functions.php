@@ -191,11 +191,12 @@ function nomad_display_post($multiple_on_page) { ?>
             <div class="article-header">
                 <h1 class="title"><?php the_title(); ?></h1>
                 <?php if(!is_page()){ ?><small><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?> | <i class="fa fa-user"></i> <?php the_author_posts_link(); ?>
-                <?php if(get_the_category_list()) { if(count(get_the_category_list()) > 1) { ?>| Categories <i class="fa fa-sitemap"></i> <?php }else{ ?>| Category <i class="fa fa-sitemap"></i> <?php } echo get_the_category_list( ", " ); ?><?php } ?></small>
+                <?php if(get_the_category_list()) { if(count(get_the_category_list()) > 1) { ?>| Categories <i class="fa fa-sitemap"></i>
+                <?php }else{ ?>| Category <i class="fa fa-sitemap"></i> <?php } echo get_the_category_list( ", " ); ?><?php } ?>
                 <?php
                     echo ' | <i class="fa fa-comment"></i> ';
                     comments_popup_link( 'No comments', '1 comment', '% comments' );
-                }?>
+                ?></small><?php } ?>
             </div>
             <?php endif ?>
         
