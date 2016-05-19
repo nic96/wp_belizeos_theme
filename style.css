@@ -215,6 +215,9 @@ article footer {
     text-decoration: none;
     color:#1e73be;
 }
+.moretag {
+    white-space: nowrap;
+}
 .widget {
     margin: 8px;
     line-height: 1.1;
