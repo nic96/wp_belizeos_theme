@@ -5,7 +5,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>">
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory'); ?>/style.min.css">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory'); ?>/css/font-awesome.min.css" />
 <script>
 function navToggle() {
