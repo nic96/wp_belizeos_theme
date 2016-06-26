@@ -214,6 +214,9 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
 #sidebar {
     padding:10px 10px 5px 10px;
 }
+.search-field {
+    max-width: 100%;
+}
 .article-header {
     border-bottom: 1px solid #e6e6e6;
     padding-bottom: 5px;
