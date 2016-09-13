@@ -17,7 +17,7 @@ function belizeos_theme_support() {
     set_post_thumbnail_size(125, 125, true);   // default thumb size
     add_theme_support('automatic-feed-links'); // rss thingy
     add_theme_support('custom-background', array(
-        'default-color' => '#1e73be',
+        'default-color' => '#e8e8e8',
     ));
     add_theme_support( 'title-tag' );
     register_nav_menus(                      // wp3+ menus
@@ -68,6 +68,24 @@ function belizeos_customize_register( $wp_customize ) {
         'section'    => 'colors',
         'settings'   => 'block_text_color',
     ) ) );
+    $wp_customize->add_setting( 'footer_background_color' , array(
+        'default'     => '#dadada',
+        'transport'   => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_background_color', array(
+        'label'        => __( 'Footer Background Color', 'belizeos' ),
+        'section'    => 'colors',
+        'settings'   => 'footer_background_color',
+    ) ) );
+    $wp_customize->add_setting( 'footer_text_color' , array(
+        'default'     => '#505050',
+        'transport'   => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_text_color', array(
+        'label'        => __( 'Footer Text Color', 'belizeos' ),
+        'section'    => 'colors',
+        'settings'   => 'footer_text_color',
+    ) ) );
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
     $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
@@ -85,6 +103,7 @@ function belizeos_customize_css()
                 color:<?php echo get_theme_mod('header_text_color', '#fff'); ?>;
             }
             .block, #sidebar-wrapper {
+                color:<?php echo get_theme_mod('block_text_color', '#000000'); ?>;
                 background-color:<?php echo get_theme_mod('block_background_color', '#fbfbfb'); ?>;
             }
             #sidebar .widget ul a {
@@ -100,8 +119,8 @@ function belizeos_customize_css()
                 color: #1e73be;
             }
             .footer {
-                color: #505050;
-                background: #dadada;
+                color:<?php echo get_theme_mod('footer_text_color', '#505050'); ?>;
+                background-color:<?php echo get_theme_mod('footer_background_color', '#dadada'); ?>;
             }
         </style>
     <?php

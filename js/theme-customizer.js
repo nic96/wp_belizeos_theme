@@ -41,11 +41,30 @@
                 } );
         } );
 
-        
+
         wp.customize( 'block_background_color', function( value ) {
                 value.bind( function( newval ) {
                         $('.block, #sidebar-wrapper').css('background-color', newval );
                 } );
         } );
-        
+
+        wp.customize( 'block_text_color', function( value ) {
+                value.bind( function( newval ) {
+                        $('.block, #sidebar-wrapper').css('color', newval );
+                } );
+        } );
+
+        //Update footer colors in real time...
+        wp.customize( 'footer_background_color', function( value ) {
+                value.bind( function( newval ) {
+                        $('.footer').css('background-color', newval );
+                } );
+        } );
+
+        wp.customize( 'footer_text_color', function( value ) {
+                value.bind( function( newval ) {
+                        $('.footer').css('color', newval );
+                } );
+        } );
+
 } )( jQuery );
