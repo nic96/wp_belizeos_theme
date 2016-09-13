@@ -1,6 +1,6 @@
 <?php
 // Declaration of theme supported features
-function nomad_theme_support() {
+function belizeos_theme_support() {
     add_theme_support( 'html5', array(
         'search-form',
         'comment-form',
@@ -22,59 +22,59 @@ function nomad_theme_support() {
     add_theme_support( 'title-tag' );
     register_nav_menus(                      // wp3+ menus
         array( 
-            'main_nav' => __('Main Menu', 'nomad'),   // main nav in header
+            'main_nav' => __('Main Menu', 'belizeos'),   // main nav in header
         )
     );
-    add_image_size( 'nomad_featured', 150, 150, true);
-    load_theme_textdomain( 'nomad', get_template_directory() . '/languages' );
+    add_image_size( 'belizeos_featured', 150, 150, true);
+    load_theme_textdomain( 'belizeos', get_template_directory() . '/languages' );
     add_editor_style( array( 'css/editor-style.css', 'css/font-awesome.min.css' ) );
 }
-add_action('after_setup_theme','nomad_theme_support');
+add_action('after_setup_theme','belizeos_theme_support');
 
-function nomad_customize_register( $wp_customize ) {
+function belizeos_customize_register( $wp_customize ) {
    $wp_customize->add_setting( 'header_color' , array(
         'default'     => '#3f3f3f',
         'transport'   => 'postMessage',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_color', array(
-        'label'        => __( 'Header Color', 'nomad' ),
+        'label'        => __( 'Header Color', 'belizeos' ),
         'section'    => 'colors',
         'settings'   => 'header_color',
     ) ) );
-    $wp_customize->add_setting( 'header_textcolor' , array(
+    $wp_customize->add_setting( 'header_text_color' , array(
         'default'     => '#ffffff',
         'transport'   => 'postMessage',
     ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_textcolor', array(
-        'label'        => __( 'Header Text Color', 'nomad' ),
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_text_color', array(
+        'label'        => __( 'Header Text Color', 'belizeos' ),
         'section'    => 'colors',
-        'settings'   => 'header_textcolor',
+        'settings'   => 'header_text_color',
     ) ) );
     $wp_customize->add_setting( 'block_background_color' , array(
         'default'     => '#fbfbfb',
         'transport'   => 'postMessage',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'block_background_color', array(
-        'label'        => __( 'Blocks Background Color', 'nomad' ),
+        'label'        => __( 'Blocks Background Color', 'belizeos' ),
         'section'    => 'colors',
         'settings'   => 'block_background_color',
     ) ) );
-    $wp_customize->add_setting( 'block_textcolor' , array(
+    $wp_customize->add_setting( 'block_text_color' , array(
         'default'     => '#000000',
         'transport'   => 'postMessage',
     ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'block_background_color', array(
-        'label'        => __( 'Blocks Background Color', 'nomad' ),
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'block_text_color', array(
+        'label'        => __( 'Blocks Text Color', 'belizeos' ),
         'section'    => 'colors',
-        'settings'   => 'block_background_color',
+        'settings'   => 'block_text_color',
     ) ) );
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
     $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
 }
-add_action( 'customize_register', 'nomad_customize_register' );
+add_action( 'customize_register', 'belizeos_customize_register' );
 
-function nomad_customize_css()
+function belizeos_customize_css()
 {
     ?>
         <style type="text/css">
@@ -82,7 +82,7 @@ function nomad_customize_css()
                 background-color:<?php echo get_theme_mod('header_color', '#333'); ?>;
             }
             .navbar-brand, .navbar li a {
-                color:<?php echo get_theme_mod('header_textcolor', '#fff'); ?>;
+                color:<?php echo get_theme_mod('header_text_color', '#fff'); ?>;
             }
             .block, #sidebar-wrapper {
                 background-color:<?php echo get_theme_mod('block_background_color', '#fbfbfb'); ?>;
@@ -106,26 +106,26 @@ function nomad_customize_css()
         </style>
     <?php
 }
-add_action( 'wp_head', 'nomad_customize_css');
+add_action( 'wp_head', 'belizeos_customize_css');
 
-function nomad_customizer_live_preview()
+function belizeos_customizer_live_preview()
 {
     wp_enqueue_script( 
-        'nomad-themecustomizer',                //Give the script an ID
+        'belizeos-themecustomizer',                //Give the script an ID
         get_template_directory_uri().'/js/theme-customizer.js',//Point to file
         array( 'jquery','customize-preview' ),  //Define dependencies
         '',                                     //Define a version (optional) 
         true                                    //Put script in footer?
     );
 }
-add_action( 'customize_preview_init', 'nomad_customizer_live_preview' );
+add_action( 'customize_preview_init', 'belizeos_customizer_live_preview' );
 
 // Sidebar and Footer declaration
-function nomad_register_sidebars() {
+function belizeos_register_sidebars() {
     register_sidebar(array(
         'id' => 'sidebar',
-        'name' => __('Sidebar', 'nomad'),
-        'description' => __('Used on every page.', 'nomad'),
+        'name' => __('Sidebar', 'belizeos'),
+        'description' => __('Used on every page.', 'belizeos'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h4 class="widgettitle">',
@@ -134,8 +134,8 @@ function nomad_register_sidebars() {
     
     register_sidebar(array(
       'id' => 'footer',
-      'name' => __('Footer', 'nomad'),
-      'description' => __('Used on every page.', 'nomad'),
+      'name' => __('Footer', 'belizeos'),
+      'description' => __('Used on every page.', 'belizeos'),
       'before_widget' => '<div id="%1$s" class="widget %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h4 class="widgettitle">',
@@ -144,8 +144,8 @@ function nomad_register_sidebars() {
     
     register_sidebar(array(
       'id' => 'footerad',
-      'name' => __('Footer Ad', 'nomad'),
-      'description' => __('Useful for Google ads. Used on every page.', 'nomad'),
+      'name' => __('Footer Ad', 'belizeos'),
+      'description' => __('Useful for Google ads. Used on every page.', 'belizeos'),
       'before_widget' => '<div id="%1$s" class="widget footerad %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h4 class="widgettitle">',
@@ -153,17 +153,17 @@ function nomad_register_sidebars() {
     ));
     
 }
-add_action( 'widgets_init', 'nomad_register_sidebars' );
+add_action( 'widgets_init', 'belizeos_register_sidebars' );
 
-function nomad_page_navi() {
+function belizeos_page_navi() {
     global $wp_query;
     ?>
 
     <?php if (get_next_posts_link() or get_previous_posts_link()) { ?>
         <nav class="block">
             <ul class="pager pager-unspaced">
-                <li class="previous"><?php next_posts_link(__('Older posts', "nomad") . " <i class='fa fa-arrow-right'></i>"); ?></li>
-                <li class="next"><?php previous_posts_link("<i class='fa fa-arrow-left'></i> " . __('Newer posts', "nomad")); ?></li>
+                <li class="previous"><?php next_posts_link(__('Older posts', "belizeos") . " <i class='fa fa-arrow-right'></i>"); ?></li>
+                <li class="next"><?php previous_posts_link("<i class='fa fa-arrow-left'></i> " . __('Newer posts', "belizeos")); ?></li>
             </ul>
         </nav>
     <?php } ?>
@@ -171,7 +171,7 @@ function nomad_page_navi() {
     <?php
 }
 
-function nomad_display_post($multiple_on_page) { ?>
+function belizeos_display_post($multiple_on_page) { ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class("block"); ?> role="article">
         
@@ -204,7 +204,7 @@ function nomad_display_post($multiple_on_page) { ?>
         <section class="post_content">
         <?php if (has_post_thumbnail()) { ?>
                 <?php if ($multiple_on_page) : ?>
-                <a href="<?php the_permalink() ?>" class="featured-image" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('nomad_featured'); ?></a>
+                <a href="<?php the_permalink() ?>" class="featured-image" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('belizeos_featured'); ?></a>
                 <?php endif ?>
         <?php } ?>
             <?php
@@ -287,7 +287,7 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
-function nomad_main_classes() {
+function belizeos_main_classes() {
     if ( !is_active_sidebar( 'sidebar' ) ){
         $classes="main-full";
     } else {

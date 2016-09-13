@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 <div id="content">
-    <div id="main" class="<?php nomad_main_classes(); ?>" role="main">
+    <div id="main" class="<?php belizeos_main_classes(); ?>" role="main">
 
             <?php if (have_posts()) : ?>
 
             <?php while (have_posts()) : the_post(); ?>
             
-            <?php nomad_display_post(false); ?>
+            <?php belizeos_display_post(false); ?>
             
             <?php comments_template('',true); ?>
             

@@ -35,7 +35,7 @@
         } );
 
         //Update site header text color in real time...
-        wp.customize( 'header_textcolor', function( value ) {
+        wp.customize( 'header_text_color', function( value ) {
                 value.bind( function( newval ) {
                         $('.navbar-brand, .navbar li a').css('color', newval );
                 } );

@@ -2,7 +2,7 @@
 
 <div id="content" class="row">
 
-	<div id="main" class="<?php nomad_main_classes(); ?>" role="main">
+	<div id="main" class="<?php belizeos_main_classes(); ?>" role="main">
 
 <article class="block">
 <!-- This sets the $curauth variable -->
