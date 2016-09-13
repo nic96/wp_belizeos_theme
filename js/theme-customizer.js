@@ -41,7 +41,7 @@
                 } );
         } );
 
-
+        //Update block colors in real time...
         wp.customize( 'block_background_color', function( value ) {
                 value.bind( function( newval ) {
                         $('.block, #sidebar-wrapper').css('background-color', newval );
