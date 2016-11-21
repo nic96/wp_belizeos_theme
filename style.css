@@ -137,6 +137,9 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
     .navbar {
         width: 100%;
     }
+    .main-nav {
+        width: 100%;
+    }
     .navbar-brand {
         width: 80%;
         padding: 0 2%;
