@@ -494,3 +494,7 @@ input:focus, textarea:focus{
 #commentform #comment {
     max-width: 100%;
 }
+
+.post_content img {
+    max-width: 100%;
+}
