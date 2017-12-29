@@ -189,6 +189,7 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
     display: block;
     width:90%;
     margin:40px auto 0px auto;
+	overflow:auto;
 }
 #sidebar-wrapper {
     margin:0px 0px 20px 0px;
