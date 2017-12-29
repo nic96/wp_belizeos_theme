@@ -53,6 +53,7 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
 }
 .main-nav, .navbar-brand, .navbar li, .main, .main-full {
     float: left;
+	height: 46px;
 }
 .navbar-brand, .navbar li a, .nav_toggle {
     display: inline-block;
