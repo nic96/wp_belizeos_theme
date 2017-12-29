@@ -113,6 +113,7 @@ a, p, h1, h2, h3, h4, h5, h6, form, input, tr {
         display: block;
         position: absolute;
         top:auto;
+		margin-top: -3px;
     }
     .navbar ul ul li a:hover, .navbar ul ul li a:focus, .navbar ul ul li:hover {
         background-color: #111;
